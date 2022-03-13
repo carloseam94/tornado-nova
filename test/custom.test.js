@@ -83,8 +83,8 @@ describe('TornadoPoolCustom', function () {
     const { merkleTreeWithHistory, tornadoPool, token, omniBridge } = await loadFixture(fixture)
 
     // estimating the gass fee for inserting a pair of leaves
-    const gas = await merkleTreeWithHistory.estimateGas.hashLeftRight(toFixedHex(123), toFixedHex(456))
-    console.log('hasher gas', gas - 21000)
+    const gas = await merkleTreeWithHistory.estimateGas.insert(toFixedHex(123), toFixedHex(456))
+    console.log('insertion gas', gas - 21000)
 
     const aliceKeypair = new Keypair() // contains private and public keys
 
