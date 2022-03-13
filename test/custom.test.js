@@ -141,7 +141,7 @@ describe('TornadoPoolCustom', function () {
     const tornadoPoolBalance = await token.balanceOf(tornadoPool.address)
     expect(tornadoPoolBalance).to.be.equal(aliceDepositAmount.sub(aliceWithdrawAmount))
 
-    // Bridge is empty because the withdrawal was performed to L2
+    // Bridge is empty
     const omniBridgeBalance = await token.balanceOf(omniBridge.address)
     expect(omniBridgeBalance).to.be.equal(0)
   })
